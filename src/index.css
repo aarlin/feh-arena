@@ -7,7 +7,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
+/* code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+} */
+
+@font-face {
+  font-family: 'FireEmblemHeroes';
+  src: local('FireEmblemHeroes'), url(./assets/Fire_Emblem_Heroes_Font.ttf) format('ttf');
 }
