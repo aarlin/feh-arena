@@ -1,5 +1,5 @@
 import React from "react";
-import { Dropdown, Input, Button, Form } from "semantic-ui-react";
+import { Dropdown, Input, Button, Form, Image } from "semantic-ui-react";
 import tierIcon from "../assets/arena/Add_Crown.png";
 
 const tiers = [
@@ -39,18 +39,28 @@ const FormContainer = () => {
   return (
     <>
       <Form style={{ color: "white" }}>
-        <Form.Group widths="1">
-          <Form.Input label="Arena Score" placeholder="Score" />
-
+        <Form.Group widths="equal" centered>
+          <Image src={tierIcon} avatar />
+          <Form.Input fluid centered placeholder="Arena Score" />
         </Form.Group>
-        <Form.Group widths="1">
-
-        <Form.Select search options={tierOptions} placeholder="Starting Tier" />
-        <Form.Select search options={tierOptions} placeholder="Ending Tier" />
+        <Form.Group widths="equal">
+          <Form.Select
+            search
+            fluid
+            options={tierOptions}
+            placeholder="Starting Tier"
+          />
+          <Form.Select
+            search
+            fluid
+            options={tierOptions}
+            placeholder="Ending Tier"
+          />
+        </Form.Group>
+        <Form.Group widths="equal">
+          <Form.Field control={Button}>Submit</Form.Field>
         </Form.Group>
       </Form>
-
-      <Button primary>Submit</Button>
     </>
   );
 };
