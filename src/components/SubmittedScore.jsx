@@ -9,32 +9,7 @@ import sampleData from "../assets/semantic/media-paragraph.png";
 const SubmittedScore = () => {
   return (
     <>
-      <Grid columns={3} divided>
-        <Grid.Row>
-          <Grid.Column>
-            <Image src={sampleData} />
-          </Grid.Column>
-          <Grid.Column>
-            <Image src={sampleData} />
-          </Grid.Column>
-          <Grid.Column>
-            <Image src={sampleData} />
-          </Grid.Column>
-        </Grid.Row>
-
-        <Grid.Row>
-          <Grid.Column>
-            <Image src={sampleData} />
-          </Grid.Column>
-          <Grid.Column>
-            <Image src={sampleData} />
-          </Grid.Column>
-          <Grid.Column>
-            <Image src={sampleData} />
-          </Grid.Column>
-        </Grid.Row>
-      </Grid>
-      <Grid columns={3} stackable>
+      <Grid columns={3} stackable divided>
         <Grid.Column>
           <Segment raised>
             <Placeholder>
