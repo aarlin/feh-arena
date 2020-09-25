@@ -1,13 +1,14 @@
 import React from "react";
+import { Divider, Grid } from "semantic-ui-react";
 import FormContainer from "../components/FormContainer";
-import TierGraph from "../components/TierGraph";
 import SiteHeader from "../components/SiteHeader";
 import Statistics from "../components/Statistics";
-import biegeBackground from "../assets/general/biege_bg.jpg";
+import SubmittedScoresCarousel from '../components/SubmittedScoresCarousel';
+import TierGraph from "../components/TierGraph";
 import greyBackground from "../assets/general/grey_bg.jpg";
+// import biegeBackground from "../assets/general/biege_bg.jpg";
+// import whiteBackground from "../assets/general/white_bg.jpg"
 import useWindowSize from "../utils/useWindowSize";
-import SubmittedScores from '../components/SubmittedScores';
-import { Segment, Grid, Form, Button, Divider } from "semantic-ui-react";
 
 const MainPage = () => {
   const windowSize = useWindowSize();
@@ -15,13 +16,14 @@ const MainPage = () => {
     <div
       style={{
         backgroundImage: `url(${greyBackground})`,
-        backgroundRepeat: "repeat-y",
+        backgroundRepeat: "repeat-y repeat-x",
         alignItems: "center",
         textAligned: "center",
       }}
     >
       <Grid columns={1} centered container>
         <Grid.Column verticalAlign="middle">
+          <Divider hidden></Divider>
           <SiteHeader></SiteHeader>
         </Grid.Column>
       </Grid>
@@ -38,7 +40,7 @@ const MainPage = () => {
       </Grid>
       <Grid columns={1} centered container>
         <Grid.Column verticalAlign="middle">
-          <SubmittedScores></SubmittedScores>
+          <SubmittedScoresCarousel></SubmittedScoresCarousel>
         </Grid.Column>
       </Grid>
     </div>
