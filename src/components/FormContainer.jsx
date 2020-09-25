@@ -35,37 +35,71 @@ const createDropdownOptions = (tiers) => {
 };
 const tierOptions = createDropdownOptions(tiers);
 
-const FormContainer = () => {
-  return (
-    <>
-      <Form className="arena-score" name="arena-score" data-netlify="true">
-        <Form.Group widths="equal" centered>
-          <Form.Input fluid centered placeholder="Arena Score" />
-        </Form.Group>
-        <Form.Group widths="equal">
-          <Form.Select
-            search
-            fluid
-            label="Starting Tier"
-            options={tierOptions}
-            placeholder="Starting Tier"
-          />
-          <Form.Select
-            disabled
-            search
-            clearable
-            label="Ending Tier"
-            fluid
-            options={tierOptions}
-            placeholder="Ending Tier"
-          />
-        </Form.Group>
-        <Form.Group widths="equal">
-          <Form.Field color="primary" control={Button}>Submit</Form.Field>
-        </Form.Group>
-      </Form>
-    </>
-  );
+const encode = (data) => {
+  return Object.keys(data)
+    .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .join("&");
 };
+
+class FormContainer extends React.Component {
+  state = { score: "", startingTier: "", endingTier: "" };
+
+  handleSubmit = e => {
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({ "form-name": "arena-score", ...this.state })
+    })
+      .then(() => alert("Success!"))
+      .catch(error => alert(error));
+
+    e.preventDefault();
+    this.setState({ score: '', startingTier: '', endingTier: '' })
+  };
+
+  handleChange = event => this.setState({ [event.target.name]: event.target.value });
+
+  handleDropdownChange = (event, data) => {
+    const { name, value } = data || event.target;
+    this.setState({ ...this.state, [name]: value});
+  }
+
+  render() {
+    return (
+      <>
+        <Form inverted className="arena-score" name="arena-score" data-netlify="true" onSubmit={this.handleSubmit}>
+          <Form.Group widths="equal" centered>
+            <Form.Input fluid centered placeholder="Arena Score" name="score" onChange={this.handleChange}/>
+          </Form.Group>
+          <Form.Group widths="equal">
+            <Form.Select
+              search
+              fluid
+              label="Starting Tier"
+              options={tierOptions}
+              placeholder="Starting Tier"
+              name="startingTier"
+              onChange={this.handleDropdownChange}
+            />
+            <Form.Select
+              search
+              label="Ending Tier"
+              fluid
+              options={tierOptions}
+              placeholder="Ending Tier"
+              name="endingTier"
+              onChange={this.handleDropdownChange}
+            />
+          </Form.Group>
+          <Form.Group widths="equal">
+            <Form.Field color="primary" control={Button}>
+              Submit
+            </Form.Field>
+          </Form.Group>
+        </Form>
+      </>
+    );
+  }
+}
 
 export default FormContainer;
