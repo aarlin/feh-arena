@@ -8,10 +8,8 @@ import TierGraph from "../components/TierGraph";
 import greyBackground from "../assets/general/grey_bg.jpg";
 // import biegeBackground from "../assets/general/biege_bg.jpg";
 // import whiteBackground from "../assets/general/white_bg.jpg"
-import useWindowSize from "../utils/useWindowSize";
 
 const MainPage = () => {
-  const windowSize = useWindowSize();
   return (
     <div
       style={{
