@@ -2,8 +2,7 @@ import React from "react";
 // import frame from "../assets/general/bg_frame_white.png";
 // import wideFrame from "../assets/general/waku_white.png";
 // import frameBackground from "../assets/general/menu_bg.jpg";
-import { Grid, Image, Segment, Placeholder } from "semantic-ui-react";
-import sampleData from "../assets/semantic/media-paragraph.png";
+import { Grid, Segment, Placeholder } from "semantic-ui-react";
 
 // 250px for mobile
 const SubmittedScore = () => {
