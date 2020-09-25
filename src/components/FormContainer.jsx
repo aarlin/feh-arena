@@ -38,7 +38,7 @@ const tierOptions = createDropdownOptions(tiers);
 const FormContainer = () => {
   return (
     <>
-      <Form inverted>
+      <Form className="arena-score" name="arena-score" data-netlify="true">
         <Form.Group widths="equal" centered>
           <Form.Input fluid centered placeholder="Arena Score" />
         </Form.Group>
