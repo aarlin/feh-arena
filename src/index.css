@@ -14,77 +14,13 @@ body {
 
 @font-face {
   font-family: 'FireEmblemHeroes';
-  src: local('FireEmblemHeroes'), url(./assets/Fire_Emblem_Heroes_Font.ttf) format('ttf');
+  src: local('FireEmblemHeroes'), url(./assets/Fire_Emblem_Heroes_Font.ttf) format('truetype');
 }
 
-.purple_box {
-	background: url('./assets/arena/Arena.png') no-repeat -882px -3px;
-	width: 876px;
-	height: 557px;
-}
-
-.arena_round {
-	background: url('./assets/arena/Arena.png') no-repeat -1454px -563px;
-	width: 62px;
-	height: 63px;
-}
-
-.check {
-	background: url('./assets/arena/Arena.png') no-repeat -1518px -563px;
-	width: 43px;
-	height: 57px;
-}
-
-.negative {
-	background: url('./assets/arena/Arena.png') no-repeat -1567px -563px;
-	width: 49px;
-	height: 49px;
-}
-
-.feh_menu {
-	background: url('./assets/arena/Arena.png') no-repeat -717px -563px;
-	width: 733px;
-	height: 79px;
-}
-
-
-.tier_icon {
-	background: url('./assets/arena/Arena.png') no-repeat -635px -562px;
-	width: 77px;
-	height: 80px;
-}
-
-.defense {
-	background: url('./assets/arena/Arena.png') no-repeat -551px -562px;
-	width: 77px;
-	height: 80px;
-}
-.score {
-	background: url('./assets/arena/Arena.png') no-repeat -465px -562px;
-	width: 77px;
-	height: 80px;
-}
-
-.up_three {
-	background: url('./assets/arena/Arena.png') no-repeat -369px -562px;
-	width: 90px;
-	height: 88px;
-}
-
-.up_two {
-	background: url('./assets/arena/Arena.png') no-repeat -277px -562px;
-	width: 90px;
-	height: 88px;
-}
-
-.up_one {
-	background: url('./assets/arena/Arena.png') no-repeat -186px -562px;
-	width: 90px;
-	height: 88px;
-}
-
-.stay_same {
-	background: url('./assets/arena/Arena.png') no-repeat -94px -562px;
-	width: 90px;
-	height: 88px;
+.feh-font {
+  font-family: FireEmblemHeroes;
+  color: white;
+  -webkit-font-smoothing: antialiased;
+  text-shadow: #000 0px 0px 1px,   #000 0px 0px 1px,   #000 0px 0px 1px,
+             #000 0px 0px 1px,   #000 0px 0px 1px,   #000 0px 0px 1px;
 }

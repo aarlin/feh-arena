@@ -4,6 +4,8 @@ import React from "react";
 // import frameBackground from "../assets/general/menu_bg.jpg";
 import { Grid } from "semantic-ui-react";
 import IndividualScore from "./IndividualScore";
+// import PurpleContentScore from "./PurpleContentScore";
+import LoadedScore from "./LoadedScore";
 
 // 250px for mobile
 const SubmittedScore = () => {
@@ -12,7 +14,7 @@ const SubmittedScore = () => {
       <Grid columns={"equal"} divided>
         <Grid.Row>
           <Grid.Column>
-            <IndividualScore></IndividualScore>
+            <LoadedScore></LoadedScore>
           </Grid.Column>
           <Grid.Column>
             <IndividualScore></IndividualScore>

@@ -1,6 +1,7 @@
 import React from "react";
 import { Button, Form } from "semantic-ui-react";
-import tierIcon from "../assets/arena/Add_Crown.png";
+import crownIcon from "../assets/arena/Add_Crown.png";
+import tierIcon from "../assets/arena/tier_icon.png";
 
 const tiers = [
   { value: "21", text: "Tier 21: Great Summoner" },
@@ -28,6 +29,7 @@ const tiers = [
 
 const createDropdownOptions = (tiers) => {
   const dropdownOptions = tiers.map((tier) => {
+    if (tier.value === "21") return { ...tier, image: { src: crownIcon}}
     return { ...tier, image: { src: tierIcon } };
   });
   console.log(dropdownOptions);
@@ -42,7 +44,7 @@ const encode = (data) => {
 };
 
 class FormContainer extends React.Component {
-  state = { score: "", startingTier: "", endingTier: "" };
+  state = { score: "", rank: "", startingTier: "", endingTier: "" };
 
   handleSubmit = e => {
     fetch("/", {
@@ -54,7 +56,7 @@ class FormContainer extends React.Component {
       .catch(error => alert(error));
 
     e.preventDefault();
-    this.setState({ score: '', startingTier: '', endingTier: '' })
+    this.setState({ score: '', rank: "", startingTier: '', endingTier: '' })
   };
 
   handleChange = event => this.setState({ [event.target.name]: event.target.value });
@@ -70,6 +72,7 @@ class FormContainer extends React.Component {
         <Form inverted name="arena-score" netlify onSubmit={this.handleSubmit}>
           <Form.Group widths="equal" centered>
             <Form.Input fluid centered placeholder="Arena Score" name="score" onChange={this.handleChange}/>
+            <Form.Input fluid centered placeholder="Rank" name="rank" onChange={this.handleChange}/>
           </Form.Group>
           <Form.Group widths="equal">
             <Form.Select
