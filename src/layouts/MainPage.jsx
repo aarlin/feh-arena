@@ -6,6 +6,7 @@ import Statistics from "../components/Statistics";
 import SubmittedScoresCarousel from '../components/SubmittedScoresCarousel';
 import TierGraph from "../components/TierGraph";
 import greyBackground from "../assets/general/grey_bg.jpg";
+import SubmittedScore from '../components/SubmittedScore';
 // import biegeBackground from "../assets/general/biege_bg.jpg";
 // import whiteBackground from "../assets/general/white_bg.jpg"
 
@@ -39,6 +40,12 @@ const MainPage = () => {
       <Grid columns={1} centered container>
         <Grid.Column verticalAlign="middle">
           <SubmittedScoresCarousel></SubmittedScoresCarousel>
+        </Grid.Column>
+      </Grid>
+
+      <Grid columns={1} centered container>
+        <Grid.Column verticalAlign="middle">
+          <SubmittedScore></SubmittedScore>
         </Grid.Column>
       </Grid>
     </div>

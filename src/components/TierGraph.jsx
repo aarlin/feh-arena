@@ -1,9 +1,19 @@
-import React from 'react';
+import React from "react";
+
+const sprites = [
+  "check", "negative", "feh_menu", "tier_icon", "defense",
+  "score", "up_three", "up_two", "up_one", "stay_same", "down_one_tier"
+]
 
 const TierGraph = () => {
   return (
-    <div>Tier Graph</div>
-  )
-}
+    <>
+      {sprites.map(sprite => (
+        <div className={sprite}>
+        </div>
+      ))}
+</>
+  );
+};
 
-export default TierGraph
+export default TierGraph;

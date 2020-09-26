@@ -67,7 +67,7 @@ class FormContainer extends React.Component {
   render() {
     return (
       <>
-        <Form inverted className="arena-score" name="arena-score" netlify data-netlify="true" onSubmit={this.handleSubmit}>
+        <Form inverted name="arena-score" netlify onSubmit={this.handleSubmit}>
           <Form.Group widths="equal" centered>
             <Form.Input fluid centered placeholder="Arena Score" name="score" onChange={this.handleChange}/>
           </Form.Group>
