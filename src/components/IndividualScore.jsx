@@ -15,6 +15,16 @@ const IndividualScore = () => {
             <Placeholder.Line length="short" />
           </Placeholder.Header>
         </Placeholder.Paragraph>
+        <Placeholder.Paragraph>
+          <Placeholder.Header image>
+            <Placeholder.Line length="medium" />
+            <Placeholder.Line length="short" />
+          </Placeholder.Header>
+        </Placeholder.Paragraph>
+        <Placeholder.Paragraph>
+          <Placeholder.Line length="medium" />
+          <Placeholder.Line length="short" />
+        </Placeholder.Paragraph>
       </Placeholder>
     </Segment>
   );

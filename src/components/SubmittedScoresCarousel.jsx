@@ -1,5 +1,5 @@
 import React from "react";
-import { Divider, Image, Statistic, Header } from "semantic-ui-react";
+import { Divider, Image, Header } from "semantic-ui-react";
 import leftArrow from "../assets/general/slide_arrow_left.png";
 import rightArrow from "../assets/general/slide_arrow_right.png";
 import menu from "../assets/arena/menu.png";

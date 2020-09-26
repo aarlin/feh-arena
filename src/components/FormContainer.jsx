@@ -30,7 +30,7 @@ const tiers = [
 const createDropdownOptions = (tiers) => {
   const dropdownOptions = tiers.map((tier) => {
     if (tier.value === "21") return { ...tier, image: { src: crownIcon}}
-    return { ...tier, image: { src: "" } };
+    return { ...tier, image: { src: tierIcon } };
   });
   console.log(dropdownOptions);
   return dropdownOptions;
@@ -76,7 +76,6 @@ class FormContainer extends React.Component {
           </Form.Group>
           <Form.Group widths="equal">
             <Form.Select
-              search
               fluid
               label="Starting Tier"
               options={tierOptions}
@@ -85,7 +84,6 @@ class FormContainer extends React.Component {
               onChange={this.handleDropdownChange}
             />
             <Form.Select
-              search
               label="Ending Tier"
               fluid
               options={tierOptions}
