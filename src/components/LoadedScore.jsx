@@ -1,18 +1,50 @@
 import React from "react";
-import { Segment, Header, Image } from "semantic-ui-react";
-import tier from "../assets/arena/tier_icon.png";
-import score from "../assets/arena/score_icon.png";
+import { Segment, Icon, Comment, Divider } from "semantic-ui-react";
+import tier from "../assets/arena/tier_icon_medium.png";
+import score from "../assets/arena/score_icon_medium.png";
+import upOne from "../assets/arena/up_one_medium.png"
 
 const LoadedScore = () => {
   return (
     <>
       <Segment color="yellow" raised>
-        <Image floated src={tier}>
+        <Comment.Group>
+          <Comment>
+            <Comment.Avatar src={tier} />
+            <Comment.Content>
+              <Comment.Author>Rank in Tier</Comment.Author>
+              <Comment.Text>
+                2049
+              </Comment.Text>
+            </Comment.Content>
+          </Comment>
 
-        </Image>
-        <Image src={score}></Image>
-        <Header>Tier </Header>
-        <div>It's a segment</div>
+
+          <Comment>
+            <Comment.Avatar src={score} />
+            <Comment.Content>
+              <Comment.Author>Score</Comment.Author>
+              <Comment.Text>3980</Comment.Text>
+            </Comment.Content>
+          </Comment>
+
+          <Comment>
+            <Comment.Avatar src={upOne} />
+            <Comment.Content>
+              <Comment.Text>
+                Tier 20
+                <Icon name="long arrow alternate right" />
+                Tier 21
+              </Comment.Text>
+            </Comment.Content>
+          </Comment>
+
+          <Divider hidden></Divider>
+
+          <Comment>
+            <Comment.Text>Submitted: {new Date().toUTCString()}</Comment.Text>
+          </Comment>
+        </Comment.Group>
       </Segment>
     </>
   );

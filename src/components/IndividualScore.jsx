@@ -10,8 +10,10 @@ const IndividualScore = () => {
           <Placeholder.Line />
         </Placeholder.Header>
         <Placeholder.Paragraph>
-          <Placeholder.Line length="medium" />
-          <Placeholder.Line length="short" />
+          <Placeholder.Header image>
+            <Placeholder.Line length="medium" />
+            <Placeholder.Line length="short" />
+          </Placeholder.Header>
         </Placeholder.Paragraph>
       </Placeholder>
     </Segment>

@@ -30,7 +30,7 @@ const tiers = [
 const createDropdownOptions = (tiers) => {
   const dropdownOptions = tiers.map((tier) => {
     if (tier.value === "21") return { ...tier, image: { src: crownIcon}}
-    return { ...tier, image: { src: tierIcon } };
+    return { ...tier, image: { src: "" } };
   });
   console.log(dropdownOptions);
   return dropdownOptions;
@@ -71,8 +71,8 @@ class FormContainer extends React.Component {
       <>
         <Form inverted name="arena-score" netlify onSubmit={this.handleSubmit}>
           <Form.Group widths="equal" centered>
-            <Form.Input fluid centered placeholder="Arena Score" name="score" onChange={this.handleChange}/>
             <Form.Input fluid centered placeholder="Rank" name="rank" onChange={this.handleChange}/>
+            <Form.Input fluid centered placeholder="Arena Score" name="score" onChange={this.handleChange}/>
           </Form.Group>
           <Form.Group widths="equal">
             <Form.Select
