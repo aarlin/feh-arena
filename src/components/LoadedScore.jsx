@@ -1,5 +1,5 @@
 import React from "react";
-import { Segment, Icon, Comment, Divider } from "semantic-ui-react";
+import { Segment, Icon, Comment, Divider, Feed } from "semantic-ui-react";
 import tier from "../assets/arena/tier_icon_medium.png";
 import score from "../assets/arena/score_icon_medium.png";
 import upOne from "../assets/arena/up_one_medium.png";
@@ -8,43 +8,44 @@ const LoadedScore = () => {
   return (
     <>
       <Segment color="yellow" raised>
-        <Comment.Group>
-          <Comment>
-            <Comment.Avatar src={tier} />
-            <Comment.Content>
-              <Comment.Author>Rank in Tier</Comment.Author>
-              <Comment.Text>2049</Comment.Text>
-            </Comment.Content>
-          </Comment>
+        <Feed>
+          <Feed.Event>
+            <Feed.Label image={tier}></Feed.Label>
+            <Feed.Content>
+              <Feed.Summary>Rank in Tier</Feed.Summary>
+              <Feed.Extra text>2940</Feed.Extra>
+            </Feed.Content>
+          </Feed.Event>
 
-          <Comment>
-            <Comment.Avatar src={score} />
-            <Comment.Content>
-              <Comment.Author>Score</Comment.Author>
-              <Comment.Text>3980</Comment.Text>
-            </Comment.Content>
-          </Comment>
+          <Feed.Event>
+            <Feed.Label image={score} />
+            <Feed.Content>
+              <Feed.Summary>Score</Feed.Summary>
+              <Feed.Extra text>3940</Feed.Extra>
+            </Feed.Content>
+          </Feed.Event>
 
-          <Comment>
-            <Comment.Avatar src={upOne} />
-            <Comment.Content>
-              <Comment.Author>Tier Progression</Comment.Author>
-              <Comment.Text>
+          <Feed.Event>
+            <Feed.Label image={upOne} />
+            <Feed.Content>
+              <Feed.Summary>Tier Progression</Feed.Summary>
+              <Feed.Extra text>
                 Tier 20
                 <Icon name="long arrow alternate right" />
                 Tier 21
-              </Comment.Text>
-            </Comment.Content>
-          </Comment>
+              </Feed.Extra>
+            </Feed.Content>
+          </Feed.Event>
 
-          <Divider hidden></Divider>
 
-          <Comment>
-            <Comment.Text>
-              <b>Submitted:</b> {new Date().toUTCString()}
-            </Comment.Text>
-          </Comment>
-        </Comment.Group>
+            <Feed.Event>
+              <Feed.Content>
+                <Feed.Summary>Submitted</Feed.Summary>
+                <Feed.Extra text>{new Date().toUTCString()}</Feed.Extra>
+              </Feed.Content>
+            </Feed.Event>
+          
+        </Feed>
       </Segment>
     </>
   );

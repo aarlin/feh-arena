@@ -6,6 +6,8 @@ import { Grid } from "semantic-ui-react";
 import IndividualScore from "./IndividualScore";
 // import PurpleContentScore from "./PurpleContentScore";
 import LoadedScore from "./LoadedScore";
+import LoadedScoreComment from "./LoadedScoreComment";
+
 
 // 250px for mobile
 const SubmittedScore = () => {
@@ -17,29 +19,29 @@ const SubmittedScore = () => {
             <LoadedScore></LoadedScore>
           </Grid.Column>
           <Grid.Column>
-            <IndividualScore></IndividualScore>
+            <LoadedScoreComment></LoadedScoreComment>
           </Grid.Column>
           <Grid.Column>
-            <IndividualScore></IndividualScore>
-          </Grid.Column>
-        </Grid.Row>
-        <Grid.Row>
-          <Grid.Column>
-            <IndividualScore></IndividualScore>
-          </Grid.Column>
-          <Grid.Column>
-            <IndividualScore></IndividualScore>
-          </Grid.Column>
-          <Grid.Column>
-            <IndividualScore></IndividualScore>
+          <LoadedScoreComment></LoadedScoreComment>
           </Grid.Column>
         </Grid.Row>
         <Grid.Row>
           <Grid.Column>
-            <IndividualScore></IndividualScore>
+          <LoadedScoreComment></LoadedScoreComment>
           </Grid.Column>
           <Grid.Column>
             <IndividualScore></IndividualScore>
+          </Grid.Column>
+          <Grid.Column>
+          <LoadedScore></LoadedScore>
+          </Grid.Column>
+        </Grid.Row>
+        <Grid.Row>
+          <Grid.Column>
+          <LoadedScore></LoadedScore>
+          </Grid.Column>
+          <Grid.Column>
+          <LoadedScore></LoadedScore>
           </Grid.Column>
           <Grid.Column>
             <IndividualScore></IndividualScore>

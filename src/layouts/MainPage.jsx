@@ -1,6 +1,6 @@
 import React from "react";
 import { Divider, Grid } from "semantic-ui-react";
-import FormContainer from "../components/FormContainer";
+import { FormContainer } from "../components/FormContainer";
 import SiteHeader from "../components/SiteHeader";
 import Statistics from "../components/Statistics";
 import SubmittedScoresCarousel from '../components/SubmittedScoresCarousel';
