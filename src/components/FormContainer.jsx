@@ -76,7 +76,6 @@ export function FormContainer() {
 
   const clearForm = () => {
     setFormState({ ...initialFormState });
-
   };
 
   const handleChange = (event) => {
@@ -87,12 +86,12 @@ export function FormContainer() {
   const handleDropdownChange = (event, data) => {
     const { name, value } = data || event.target;
 
-    setFormState((previousState) => ({ ...previousState, [name]: value }));
-
     if (name === "startingTier") {
-      setFormState({...form, endingTier: 0})
+      setFormState({...form, [name]: value, endingTier: 0})
       setDisabledDropdown(false);
       setEndingTierOptions(createEndingTierOptions(value));
+    } else if (name === "endingTier") {
+      setFormState((previousState) => ({ ...previousState, [name]: value }));
     }
   };
 
@@ -108,11 +107,7 @@ export function FormContainer() {
         let tier = tierOption.value;
         return tier === startingTier || tier === startingTier - 1;
       });
-    } else if (
-      startingTier === 20 ||
-      startingTier === 17 ||
-      startingTier === 16
-    ) {
+    } else if (startingTier === 20 || startingTier === 17 || startingTier === 16) {
       endingTiers = tiers.filter((tierOption) => {
         let tier = tierOption.value;
         return (
@@ -149,7 +144,7 @@ export function FormContainer() {
           tier === startingTier ||
           tier === startingTier + 1 ||
           tier === startingTier - 1 ||
-          startingTier + 2
+          tier === startingTier + 2
         );
       });
     }
@@ -176,6 +171,7 @@ export function FormContainer() {
 
   useEffect(() => {
     console.log("efftect");
+    console.log(form)
   });
 
   return (
@@ -208,6 +204,7 @@ export function FormContainer() {
           <Form.Select
             required
             fluid
+            closeOnEscape
             options={tierOptions}
             placeholder="Starting Tier"
             name="startingTier"
@@ -217,10 +214,12 @@ export function FormContainer() {
             required
             disabled={disabledDropdown}
             fluid
+            closeOnEscape
             options={endingTierOptions}
             placeholder="Ending Tier"
             name="endingTier"
             onChange={handleDropdownChange}
+            value={form.endingTier}
           />
         </Form.Group>
         <Form.Group widths="equal">
