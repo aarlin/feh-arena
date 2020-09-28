@@ -50,8 +50,8 @@ const encode = (data) => {
 };
 
 const initialFormState = {
-  score: 0,
-  rank: 0,
+  score: "",
+  rank: "",
   startingTier: 0,
   endingTier: 0,
 };
@@ -89,14 +89,14 @@ export function FormContainer() {
     if (name === "startingTier") {
       setFormState({...form, [name]: value, endingTier: 0})
       setDisabledDropdown(false);
-      setEndingTierOptions(createEndingTierOptions(value));
+      setEndingTierOptions(populateEndingTierOptions(value));
     } else if (name === "endingTier") {
       setFormState((previousState) => ({ ...previousState, [name]: value }));
     }
   };
 
-  const createEndingTierOptions = (startingTier) => {
-    let endingTiers = [];
+  const _createEndingTierOptions = (startingTier) => {
+    let endingTiers = []
     if (startingTier === 18 || startingTier === 19) {
       endingTiers = tiers.filter((tierOption) => {
         let tier = tierOption.value;
@@ -148,8 +148,11 @@ export function FormContainer() {
         );
       });
     }
+    return endingTiers;
+  }
 
-    let mappedTiers = endingTiers.map((tier) => {
+  const _addEndingTierIcons = (startingTier, endingTiers) => {
+    return endingTiers.map((tier) => {
       switch (tier.value) {
         case startingTier + 3:
           return { ...tier, image: { src: upThree } };
@@ -165,7 +168,11 @@ export function FormContainer() {
           return null;
       }
     });
+  }
 
+  const populateEndingTierOptions = (startingTier) => {
+    let endingTiers = _createEndingTierOptions(startingTier);
+    let mappedTiers = _addEndingTierIcons(startingTier, endingTiers);
     return mappedTiers;
   };
 
@@ -190,6 +197,7 @@ export function FormContainer() {
             placeholder="Rank"
             name="rank"
             onChange={handleChange}
+            value={form.rank}
           />
           <Form.Input
             required
@@ -198,6 +206,7 @@ export function FormContainer() {
             placeholder="Arena Score"
             name="score"
             onChange={handleChange}
+            value={form.score}
           />
         </Form.Group>
         <Form.Group widths="equal">
@@ -209,6 +218,7 @@ export function FormContainer() {
             placeholder="Starting Tier"
             name="startingTier"
             onChange={handleDropdownChange}
+            value={form.startingTier}
           />
           <Form.Select
             required
