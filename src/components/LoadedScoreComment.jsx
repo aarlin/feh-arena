@@ -1,5 +1,5 @@
 import React from "react";
-import { Segment, Comment, Icon, Divider } from "semantic-ui-react";
+import { Segment, Comment, Icon } from "semantic-ui-react";
 import tier from "../assets/arena/tier_icon_medium.png";
 import score from "../assets/arena/score_icon_medium.png";
 import upOne from "../assets/arena/up_one_medium.png";

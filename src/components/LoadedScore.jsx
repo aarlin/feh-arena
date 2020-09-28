@@ -1,5 +1,5 @@
 import React from "react";
-import { Segment, Icon, Comment, Divider, Feed } from "semantic-ui-react";
+import { Segment, Icon, Feed } from "semantic-ui-react";
 import tier from "../assets/arena/tier_icon_medium.png";
 import score from "../assets/arena/score_icon_medium.png";
 import upOne from "../assets/arena/up_one_medium.png";
@@ -37,14 +37,12 @@ const LoadedScore = () => {
             </Feed.Content>
           </Feed.Event>
 
-
-            <Feed.Event>
-              <Feed.Content>
-                <Feed.Summary>Submitted</Feed.Summary>
-                <Feed.Extra text>{new Date().toUTCString()}</Feed.Extra>
-              </Feed.Content>
-            </Feed.Event>
-          
+          <Feed.Event>
+            <Feed.Content>
+              <Feed.Summary>Submitted</Feed.Summary>
+              <Feed.Extra text>{new Date().toUTCString()}</Feed.Extra>
+            </Feed.Content>
+          </Feed.Event>
         </Feed>
       </Segment>
     </>

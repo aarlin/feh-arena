@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { Button, Form } from "semantic-ui-react";
 import crownIcon from "../assets/arena/Add_Crown.png";
 import tierIcon from "../assets/arena/tier_icon.png";
@@ -47,14 +47,6 @@ const encode = (data) => {
     .join("&");
 };
 
-const usePrevious = (value) => {
-  const ref = useRef();
-  useEffect(() => {
-    ref.current = value;
-  });
-  return ref.current;
-};
-
 const initialFormState = {
   score: 0,
   rank: 0,
@@ -66,13 +58,12 @@ export function FormContainer() {
   const [form, setFormState] = useState(initialFormState);
   const [disabledDropdown, setDisabledDropdown] = useState(true);
   const [endingTierOptions, setEndingTierOptions] = useState([]);
-  const previousFormState = usePrevious(form);
 
   const handleSubmit = (e) => {
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({ "form-name": "arena-score", ...this.state }),
+      body: encode({ "form-name": "arena-score", ...form }),
     })
       .then(() => alert("Success!"))
       .catch((error) => alert(error));
@@ -83,6 +74,7 @@ export function FormContainer() {
 
   const clearForm = () => {
     setFormState({ ...initialFormState });
+
   };
 
   const handleChange = (event) => {
@@ -92,10 +84,12 @@ export function FormContainer() {
 
   const handleDropdownChange = (event, data) => {
     const { name, value } = data || event.target;
+
+    setFormState((previousState) => ({ ...previousState, [name]: value }));
+
     if (name === "startingTier") {
       setDisabledDropdown(false);
       setEndingTierOptions(createEndingTierOptions(value));
-      setFormState((previousState) => ({ ...previousState, [name]: value }));
     }
   };
 
@@ -169,9 +163,8 @@ export function FormContainer() {
           return { ...tier, image: { src: staySame } };
         case startingTier - 1:
           return { ...tier, image: { src: downOne } };
-
         default:
-          break;
+          return null;
       }
     });
 
@@ -180,9 +173,6 @@ export function FormContainer() {
 
   useEffect(() => {
     console.log("efftect");
-
-    // disableEndingTier = false;
-    // endingTierOptions = this.createEndingTierOptions(this.state.startingTier);
   });
 
   return (
