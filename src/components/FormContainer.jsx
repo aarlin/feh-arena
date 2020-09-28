@@ -34,7 +34,9 @@ const tiers = [
 
 const createDropdownOptions = (tiers) => {
   const dropdownOptions = tiers.map((tier) => {
-    if (tier.value === "21") return { ...tier, image: { src: crownIcon } };
+    if (tier.value === 21) {
+      return { ...tier, image: { src: crownIcon } };
+    }
     return { ...tier, image: { src: tierIcon } };
   });
   return dropdownOptions;
@@ -88,6 +90,7 @@ export function FormContainer() {
     setFormState((previousState) => ({ ...previousState, [name]: value }));
 
     if (name === "startingTier") {
+      setFormState({...form, endingTier: 0})
       setDisabledDropdown(false);
       setEndingTierOptions(createEndingTierOptions(value));
     }

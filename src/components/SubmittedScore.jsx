@@ -13,7 +13,7 @@ import LoadedScoreComment from "./LoadedScoreComment";
 const SubmittedScore = () => {
   return (
     <>
-      <Grid columns={"equal"} divided>
+      <Grid columns={"equal"} divided stackable>
         <Grid.Row>
           <Grid.Column>
             <LoadedScore></LoadedScore>
