@@ -76,6 +76,7 @@ export function FormContainer() {
 
   const clearForm = () => {
     setFormState({ ...initialFormState });
+    setDisabledDropdown(true);
   };
 
   const handleChange = (event) => {
