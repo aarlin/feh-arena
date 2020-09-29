@@ -87,12 +87,17 @@ export function FormContainer() {
   const handleDropdownChange = (event, data) => {
     const { name, value } = data || event.target;
 
-    if (name === "startingTier") {
-      setFormState({...form, [name]: value, endingTier: 0})
-      setDisabledDropdown(false);
-      setEndingTierOptions(populateEndingTierOptions(value));
-    } else if (name === "endingTier") {
-      setFormState((previousState) => ({ ...previousState, [name]: value }));
+    switch (name) {
+      case "startingTier":
+        setFormState({...form, [name]: value, endingTier: 0})
+        setDisabledDropdown(false);
+        setEndingTierOptions(populateEndingTierOptions(value));
+        break;
+      case "endingTier":
+        setFormState((previousState) => ({ ...previousState, [name]: value }));
+        break;
+      default:
+        break;
     }
   };
 
