@@ -7,28 +7,12 @@ import menuMed from "../assets/arena/menu_med.png";
 import results from "../assets/general/results.png";
 import lumpyBlue from "../assets/arena/bg_votebtn_blue.png";
 import lumpyBlueSmall from "../assets/arena/bg_votebtn_blue_small.png";
-import { createMedia } from "@artsy/fresnel";
-
-const AppMedia = createMedia({
-  breakpoints: {
-    mobile: 320,
-    tablet: 768,
-    computer: 992,
-    largeScreen: 1200,
-    widescreen: 1920,
-  },
-});
-
-const mediaStyles = AppMedia.createMediaStyle();
-const { Media, MediaContextProvider } = AppMedia;
 
 // 250px for mobile
 // todo: add season blessings
 const SubmittedScores = () => {
   return (
     <>
-      <style>{mediaStyles}</style>
-      <MediaContextProvider>
         <Image.Group>
           <Image src={leftArrow} size="mini" />
           {/* <Responsive
@@ -85,7 +69,6 @@ const SubmittedScores = () => {
         </Image.Group>
 
         <Divider hidden />
-      </MediaContextProvider>
     </>
   );
 };
