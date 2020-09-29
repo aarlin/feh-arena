@@ -1,10 +1,16 @@
 import React from "react";
 import { Segment, Comment, Icon } from "semantic-ui-react";
 import tier from "../assets/arena/tier_icon_medium.png";
-import score from "../assets/arena/score_icon_medium.png";
+import scoreIcon from "../assets/arena/score_icon_medium.png";
 import upOne from "../assets/arena/up_one_medium.png";
 
-const LoadedScoreComment = () => {
+const LoadedScoreComment = ({
+  tierRank,
+  score,
+  startingTier,
+  endingTier,
+  dateSubmitted,
+}) => {
   return (
     <Segment color="yellow">
       <Comment.Group>
@@ -12,46 +18,32 @@ const LoadedScoreComment = () => {
           <Comment.Avatar src={tier} />
           <Comment.Content>
             <Comment.Author>Rank in Tier</Comment.Author>
-            <Comment.Text>2049</Comment.Text>
+            <Comment.Text>{tierRank}</Comment.Text>
           </Comment.Content>
         </Comment>
-
         <Comment>
-          <Comment.Avatar src={score} />
+          <Comment.Avatar src={scoreIcon} />
           <Comment.Content>
             <Comment.Author>Score</Comment.Author>
-            <Comment.Text>3980</Comment.Text>
+            <Comment.Text>{score}</Comment.Text>
           </Comment.Content>
         </Comment>
-
         <Comment>
           <Comment.Avatar src={upOne} />
           <Comment.Content>
             <Comment.Author>Tier Progression</Comment.Author>
             <Comment.Text>
-              Tier 20
-              <Icon name="long arrow alternate right" />
-              Tier 21
+              Tier {startingTier} ⇒ Tier {endingTier}
             </Comment.Text>
           </Comment.Content>
         </Comment>
-
-        {Math.random() * 2 > 1 ? (
-          <Comment>
-            <Comment.Content>
-              <Comment.Author>Submitted</Comment.Author>
-              <Comment.Text>{new Date().toUTCString()}</Comment.Text>
-            </Comment.Content>
-          </Comment>
-        ) : (
-          <Comment>
-            <Comment.Content>
-              <Comment.Text>
-                <b>Submitted:</b> {new Date().toUTCString()}
-              </Comment.Text>
-            </Comment.Content>
-          </Comment>
-        )}
+        <Comment>
+          <Comment.Content>
+            <Comment.Text>
+              <b>Submitted:</b> {dateSubmitted}
+            </Comment.Text>
+          </Comment.Content>
+        </Comment>
       </Comment.Group>
     </Segment>
   );

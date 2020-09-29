@@ -1,10 +1,16 @@
 import React from "react";
-import { Segment, Icon, Feed } from "semantic-ui-react";
+import { Segment, Feed } from "semantic-ui-react";
 import tier from "../assets/arena/tier_icon_medium.png";
-import score from "../assets/arena/score_icon_medium.png";
+import scoreIcon from "../assets/arena/score_icon_medium.png";
 import upOne from "../assets/arena/up_one_medium.png";
 
-const LoadedScore = () => {
+const LoadedScore = ({
+  tierRank,
+  score,
+  startingTier,
+  endingTier,
+  dateSubmitted,
+}) => {
   return (
     <>
       <Segment color="yellow" raised>
@@ -13,15 +19,15 @@ const LoadedScore = () => {
             <Feed.Label image={tier}></Feed.Label>
             <Feed.Content>
               <Feed.Summary>Rank in Tier</Feed.Summary>
-              <Feed.Extra text>2940</Feed.Extra>
+              <Feed.Extra text>{tierRank}</Feed.Extra>
             </Feed.Content>
           </Feed.Event>
 
           <Feed.Event>
-            <Feed.Label image={score} />
+            <Feed.Label image={scoreIcon} />
             <Feed.Content>
               <Feed.Summary>Score</Feed.Summary>
-              <Feed.Extra text>3940</Feed.Extra>
+              <Feed.Extra text>{score}</Feed.Extra>
             </Feed.Content>
           </Feed.Event>
 
@@ -30,17 +36,16 @@ const LoadedScore = () => {
             <Feed.Content>
               <Feed.Summary>Tier Progression</Feed.Summary>
               <Feed.Extra text>
-                Tier 20
-                <Icon name="long arrow alternate right" />
-                Tier 21
+                Tier {startingTier} ⇒ Tier {endingTier}
               </Feed.Extra>
             </Feed.Content>
           </Feed.Event>
 
           <Feed.Event>
             <Feed.Content>
-              <Feed.Summary>Submitted</Feed.Summary>
-              <Feed.Extra text>{new Date().toUTCString()}</Feed.Extra>
+              <Feed.Extra text>
+                <b>Submitted:</b> {dateSubmitted}
+              </Feed.Extra>
             </Feed.Content>
           </Feed.Event>
         </Feed>

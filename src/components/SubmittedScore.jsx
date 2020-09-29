@@ -8,6 +8,13 @@ import IndividualScore from "./IndividualScore";
 import LoadedScore from "./LoadedScore";
 import LoadedScoreComment from "./LoadedScoreComment";
 
+const score = {
+  tierRank: 201,
+  score: 3940,
+  startingTier: 20,
+  endingTier: 21,
+  dateSubmitted: new Date().toUTCString()
+}
 
 // 250px for mobile
 const SubmittedScore = () => {
@@ -16,32 +23,32 @@ const SubmittedScore = () => {
       <Grid columns={"equal"} divided stackable>
         <Grid.Row>
           <Grid.Column>
-            <LoadedScore></LoadedScore>
+            <LoadedScore {...score}></LoadedScore>
           </Grid.Column>
+          <Grid.Column>
+            <LoadedScoreComment {...score}></LoadedScoreComment>
+          </Grid.Column>
+          <Grid.Column>
+            <LoadedScoreComment {...score}></LoadedScoreComment>
+          </Grid.Column>
+        </Grid.Row>
+        <Grid.Row>
+          <Grid.Column>
+            <LoadedScoreComment {...score}></LoadedScoreComment>
+          </Grid.Column>
+          <Grid.Column>
+            <LoadedScoreComment {...score}></LoadedScoreComment>
+          </Grid.Column>
+          <Grid.Column>
+            <LoadedScoreComment {...score}></LoadedScoreComment>
+          </Grid.Column>
+        </Grid.Row>
+        <Grid.Row>
           <Grid.Column>
             <LoadedScoreComment></LoadedScoreComment>
           </Grid.Column>
           <Grid.Column>
-          <LoadedScoreComment></LoadedScoreComment>
-          </Grid.Column>
-        </Grid.Row>
-        <Grid.Row>
-          <Grid.Column>
-          <LoadedScoreComment></LoadedScoreComment>
-          </Grid.Column>
-          <Grid.Column>
-            <IndividualScore></IndividualScore>
-          </Grid.Column>
-          <Grid.Column>
-          <LoadedScore></LoadedScore>
-          </Grid.Column>
-        </Grid.Row>
-        <Grid.Row>
-          <Grid.Column>
-          <LoadedScore></LoadedScore>
-          </Grid.Column>
-          <Grid.Column>
-          <LoadedScore></LoadedScore>
+            <LoadedScore></LoadedScore>
           </Grid.Column>
           <Grid.Column>
             <IndividualScore></IndividualScore>
