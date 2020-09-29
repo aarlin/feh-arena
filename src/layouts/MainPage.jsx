@@ -3,7 +3,7 @@ import { Divider, Grid } from "semantic-ui-react";
 import { FormContainer } from "../components/FormContainer";
 import SiteHeader from "../components/SiteHeader";
 import Statistics from "../components/Statistics";
-import SubmittedScoresCarousel from '../components/SubmittedScoresCarousel';
+// import SubmittedScoresCarousel from '../components/SubmittedScoresCarousel';
 import TierGraph from "../components/TierGraph";
 import greyBackground from "../assets/general/grey_bg.jpg";
 import SubmittedScore from '../components/SubmittedScore';

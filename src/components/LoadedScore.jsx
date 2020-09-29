@@ -1,6 +1,6 @@
 import React from "react";
 import { Segment, Feed } from "semantic-ui-react";
-import tier from "../assets/arena/tier_icon_medium.png";
+import tierIcon from "../assets/arena/tier_icon_medium.png";
 import scoreIcon from "../assets/arena/score_icon_medium.png";
 import upOne from "../assets/arena/up_one_medium.png";
 
@@ -16,7 +16,7 @@ const LoadedScore = ({
       <Segment color="yellow" raised>
         <Feed>
           <Feed.Event>
-            <Feed.Label image={tier}></Feed.Label>
+            <Feed.Label image={tierIcon}></Feed.Label>
             <Feed.Content>
               <Feed.Summary>Rank in Tier</Feed.Summary>
               <Feed.Extra text>{tierRank}</Feed.Extra>

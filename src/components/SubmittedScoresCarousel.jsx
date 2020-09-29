@@ -1,11 +1,11 @@
 import React from "react";
-import { Divider, Image, Header, Responsive } from "semantic-ui-react";
+import { Divider, Image, Responsive } from "semantic-ui-react";
 import leftArrow from "../assets/general/slide_arrow_left.png";
 import rightArrow from "../assets/general/slide_arrow_right.png";
 import menu from "../assets/arena/menu.png";
-import menuMed from "../assets/arena/menu_med.png";
+// import menuMed from "../assets/arena/menu_med.png";
 import results from "../assets/general/results.png";
-import lumpyBlue from "../assets/arena/bg_votebtn_blue.png";
+// import lumpyBlue from "../assets/arena/bg_votebtn_blue.png";
 import lumpyBlueSmall from "../assets/arena/bg_votebtn_blue_small.png";
 
 // 250px for mobile

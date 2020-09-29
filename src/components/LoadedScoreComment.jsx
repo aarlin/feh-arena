@@ -1,6 +1,6 @@
 import React from "react";
-import { Segment, Comment, Icon } from "semantic-ui-react";
-import tier from "../assets/arena/tier_icon_medium.png";
+import { Segment, Comment } from "semantic-ui-react";
+import tierIcon from "../assets/arena/tier_icon_medium.png";
 import scoreIcon from "../assets/arena/score_icon_medium.png";
 import upOne from "../assets/arena/up_one_medium.png";
 
@@ -15,7 +15,7 @@ const LoadedScoreComment = ({
     <Segment color="yellow">
       <Comment.Group>
         <Comment>
-          <Comment.Avatar src={tier} />
+          <Comment.Avatar src={tierIcon} />
           <Comment.Content>
             <Comment.Author>Rank in Tier</Comment.Author>
             <Comment.Text>{tierRank}</Comment.Text>
