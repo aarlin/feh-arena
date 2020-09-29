@@ -37,11 +37,11 @@ const MainPage = () => {
           <Statistics></Statistics>
         </Grid.Column>
       </Grid>
-      <Grid columns={1} centered container>
+      {/* <Grid columns={1} centered container>
         <Grid.Column verticalAlign="middle">
           <SubmittedScoresCarousel></SubmittedScoresCarousel>
         </Grid.Column>
-      </Grid>
+      </Grid> */}
 
       <Grid columns={1} centered container>
         <Grid.Column verticalAlign="middle">
