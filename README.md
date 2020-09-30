@@ -5,3 +5,8 @@
 ## Description
 
 Post your Fire Emblem Heroes arena scores
+
+
+## References
+
+https://hackersandslackers.com/deploy-serverless-golang-functions-with-netlify/
