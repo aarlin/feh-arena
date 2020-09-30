@@ -1,5 +1,5 @@
 build:
-	npm run-script build
+	yarn build
 	mkdir -p functions
 	GOOS=linux
 	GOARCH=amd64
