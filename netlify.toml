@@ -1,6 +1,7 @@
 [build]
-    command = "yarn build && make build "
-    functions = "functions"
-    publish = "/build"
+  base = "/"
+  command = "make build"
+  functions = "/functions"
+  publish = "/build"
 [build.environment]
-    GO_IMPORT_PATH = "github.com/aarlin/feh-tier"
+  GO_VERSION = "1.14.5"
