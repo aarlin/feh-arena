@@ -7,42 +7,37 @@ import IndividualScore from "./IndividualScore";
 // import PurpleContentScore from "./PurpleContentScore";
 import LoadedScore from "./LoadedScore";
 import LoadedScoreComment from "./LoadedScoreComment";
+import chunk from "lodash.chunk";
 
 const score = {
   tierRank: 201,
   score: 3940,
   startingTier: 20,
   endingTier: 21,
-  dateSubmitted: new Date().toUTCString()
-}
+  dateSubmitted: new Date().toUTCString(),
+};
+
+let scores = [score, score, score, score];
+let groupedScores = chunk(scores, 3);
 
 // 250px for mobile
 const SubmittedScore = () => {
   return (
     <>
-      <Grid columns={"equal"} divided stackable>
-        <Grid.Row>
-          <Grid.Column>
-            <LoadedScore {...score}></LoadedScore>
-          </Grid.Column>
-          <Grid.Column>
-            <LoadedScoreComment {...score}></LoadedScoreComment>
-          </Grid.Column>
-          <Grid.Column>
-            <LoadedScoreComment {...score}></LoadedScoreComment>
-          </Grid.Column>
-        </Grid.Row>
-        <Grid.Row>
-          <Grid.Column>
-            <LoadedScoreComment {...score}></LoadedScoreComment>
-          </Grid.Column>
-          <Grid.Column>
-            <LoadedScoreComment {...score}></LoadedScoreComment>
-          </Grid.Column>
-          <Grid.Column>
-            <LoadedScoreComment {...score}></LoadedScoreComment>
-          </Grid.Column>
-        </Grid.Row>
+      <Grid columns={3} divided stackable>
+        {groupedScores.map((group) => {
+          return (
+            <Grid.Row>
+              {group.map((score) => {
+                return (
+                  <Grid.Column stretched>
+                    <LoadedScore {...score}></LoadedScore>
+                  </Grid.Column>
+                );
+              })}
+            </Grid.Row>
+          );
+        })}
         <Grid.Row>
           <Grid.Column>
             <LoadedScoreComment></LoadedScoreComment>
