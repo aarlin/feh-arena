@@ -17,7 +17,24 @@ const score = {
   dateSubmitted: new Date().toUTCString(),
 };
 
-let scores = [score, score, score, score];
+const scoreDown = {
+  tierRank: 201,
+  score: 3940,
+  startingTier: 21,
+  endingTier: 20,
+  dateSubmitted: new Date().toUTCString(),
+};
+
+const scoreUpTwo = {
+  tierRank: 201,
+  score: 3940,
+  startingTier: 10,
+  endingTier: 12,
+  dateSubmitted: new Date().toUTCString(),
+};
+
+
+let scores = [score, score, scoreDown, scoreUpTwo];
 let groupedScores = chunk(scores, 3);
 
 // 250px for mobile

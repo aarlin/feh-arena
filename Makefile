@@ -1,5 +1,5 @@
 build:
-	yarn ryb build
+	yarn run build
 	mkdir -p functions
 	GOOS=linux
 	GOARCH=amd64
