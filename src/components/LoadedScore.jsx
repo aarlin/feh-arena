@@ -25,6 +25,8 @@ const generateTierIcon = (startingTier, endingTier) => {
   }
 }
 
+// TODO: add arena week #, hours before submission end, arena week run dates
+
 const LoadedScore = ({
   tierRank,
   score,
