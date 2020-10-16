@@ -7,6 +7,7 @@ import Statistics from "../components/Statistics";
 import TierGraph from "../components/TierGraph";
 import greyBackground from "../assets/general/grey_bg.jpg";
 import SubmittedScore from '../components/SubmittedScore';
+import { WeeklyScoreFilter } from '../components/WeeklyScoreFilter';
 // import biegeBackground from "../assets/general/biege_bg.jpg";
 // import whiteBackground from "../assets/general/white_bg.jpg"
 
@@ -42,6 +43,11 @@ const MainPage = () => {
           <SubmittedScoresCarousel></SubmittedScoresCarousel>
         </Grid.Column>
       </Grid> */}
+      <Grid columns={1} centered container>
+        <Grid.Column verticalAlign="middle">
+          <WeeklyScoreFilter></WeeklyScoreFilter>
+        </Grid.Column>
+      </Grid>
 
       <Grid columns={1} centered container>
         <Grid.Column verticalAlign="middle">
