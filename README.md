@@ -9,4 +9,6 @@ Post your Fire Emblem Heroes arena scores
 
 ## References
 
-https://hackersandslackers.com/deploy-serverless-golang-functions-with-netlify/
+https://hackersandslackers.com/deploy-serverless-golang-functions-with-netlify/  
+https://feheroes.gamepedia.com/Seasons  
+https://feheroes.gamepedia.com/List_of_Arena_bonus_Heroes  
